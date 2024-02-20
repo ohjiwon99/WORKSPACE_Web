@@ -38,8 +38,7 @@ public class phonebookController extends HttpServlet {
 			  
 			//jsp한테 heml그리기! ->응답해줘 ==>포워드forword
 		      RequestDispatcher rd = request.getRequestDispatcher("/WriteForm.jsp");
-		      rd.forward(request, response);
-		      
+		      rd.forward(request, response);    
 		      //http://localhost:8080/phonebook3/pbc?name=오지원&hp=010&company=02
 		  
 		      
