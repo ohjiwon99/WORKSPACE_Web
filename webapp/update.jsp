@@ -12,14 +12,14 @@
 
 	<h1>전화번호부</h1>
 
-	<h2>등록폼</h2>
+	<h2>수정폼</h2>
 
 	<p>
-		전화번호를 등록하려면 <br> 아래항목을 기입하고 "등록" 버튼을 클릭하세요
+		전화번호를 수정하려면 <br> 아래항목을 기입하고 "수정" 버튼을 클릭하세요
 	</p>
 
-	http://localhost:8080/phonebook3/pbc?action=insert&
-	name=오지원&hp=010&company=02
+
+	
 	<form action="http://localhost:8080/phonebook3/pbc" method="get">
 
 		<div>
@@ -33,9 +33,11 @@
 		<div>
 			<label>회사(company)</label> <input type="text" name="company" value="">
 		</div>
+		<input type="hidden" name="no" value="<%=request.getAttribute("no")%>">
 
-		<input type="text" name="action" value="insert"><br>
-		<button type="submit">등록</button>
+		<input type="text" name="action" value="update2"><br>
+		<button type="submit">수정</button>
+	
 
 	</form>
 

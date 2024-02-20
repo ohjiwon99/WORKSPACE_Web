@@ -1,9 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ page import="java.util.List" %>
-<%@ page import="com.javaex.vo.PersonVo" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ page import="java.util.List"%>
+<%@ page import="com.javaex.vo.PersonVo"%>
 
 <%
-List<PersonVo> personList = (List<PersonVo>)request.getAttribute("personList");
+List<PersonVo> personList = (List<PersonVo>) request.getAttribute("personList");
 System.out.println(personList);
 %>
 
@@ -16,45 +17,56 @@ System.out.println(personList);
 </head>
 <body>
 
-<h1>전화번호부</h1>
+	<h1>전화번호부</h1>
 
-<h2>리스트</h2>
+	<h2>리스트</h2>
 
-<p> 
-    등록된 전화번호 리스트입니다.
-</p>
+	<p>등록된 전화번호 리스트입니다.</p>
 
-<%
-for(int i=0; i<personList.size(); i++){
-%>
+	<%
+	for (int i = 0; i < personList.size(); i++) {
+	%>
 
- <table border="I">
+	<table border="I">
 
- <tr>
-    <th>이름(name)</th>
-    <td><%=personList.get(i).getName()%></td>
- </tr>
-  
- <tr>
-    <th>핸드폰(hp)</th>
-   <td><%=personList.get(i).getHp()%></td>
- </tr>
-  
- <tr>
-    <th>회사(company)</th>
-    <td><%=personList.get(i).getCompany()%></td>
- </tr>
+		<tr>
+			<th>이름(name)</th>
+			<td><%=personList.get(i).getName()%></td>
+		</tr>
 
- </table>
- <br>	
-<%
+		<tr>
+			<th>핸드폰(hp)</th>
+			<td><%=personList.get(i).getHp()%></td>
+		</tr>
 
-}
-%>
+		<tr>
+			<th>회사(company)</th>
+			<td><%=personList.get(i).getCompany()%></td>
+		</tr>
 
 
+		<tr>
+			<td><%=personList.get(i).getPersonId()%> <a
+				href="/phonebook3/pbc?action=delete&no=<%=personList.get(i).getPersonId()%>">[삭제]</a>
+			</td>
+			
+			<td><%=personList.get(i).getPersonId()%> <a
+				href="/phonebook3/pbc?action=update&no=<%=personList.get(i).getPersonId()%>">[수정]</a>
+			</td>
 
- 
+		</tr>
+
+
+
+	</table>
+	<br>
+	<%
+	}
+	%>
+
+
+
+
 
 </body>
 </html>
