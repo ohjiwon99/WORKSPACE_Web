@@ -23,19 +23,19 @@
 	<form action="http://localhost:8080/phonebook3/pbc" method="get">
 
 		<div>
-			<label>이름(name)</label> <input type="text" name="name" value="">
+			<label>이름(name)</label> <input type="text" name="name" value="${personVo.name}">
 		</div>
 
 		<div>
-			<label>핸드폰(hp)</label> <input type="text" name="hp" value="">
+			<label>핸드폰(hp)</label> <input type="text" name="hp" value="${personVo.ph}">
 		</div>
 
 		<div>
-			<label>회사(company)</label> <input type="text" name="company" value="">
+			<label>회사(company)</label> <input type="text" name="company" value="${personVo.company }">
 		</div>
 		<input type="hidden" name="no" value="<%=request.getAttribute("no")%>">
 
-		<input type="text" name="action" value="update2"><br>
+		<input type="text" name="action" value="update"><br>
 		<button type="submit">수정</button>
 	
 
